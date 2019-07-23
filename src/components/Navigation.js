@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return (
@@ -6,13 +7,15 @@ const Navigation = () => {
       <div className="App">
         <h1>React Router Mini</h1>
         <div>
-          <a href="">Home</a>
+          <NavLink to="/" isActive={(match, location) => {
+            return match.url === "/";
+          }}>Home</NavLink>
         </div>
         <div>
-          <a href="">About</a>
+          <NavLink to={`/about`}>About</NavLink>
         </div>
         <div>
-          <a href="">Contact</a>
+          <NavLink to="/contact">Contact</NavLink>
         </div>
       </div>
     </div>
